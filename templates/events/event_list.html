@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block page_title %}
+	{{ title }}
+{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row center">
+			<h3 class="grey-text">Lista de eventos</h3>
+		</div>
+		<div class="row center">
+			<a href="{% url 'events:new' %}" class="btn-large lime waves-effect accent-1 blue-grey-text">Agregar nuevo evento</a>
+			<h3 class="flow-text">A continuación podrás ver los eventos mas recientes eventos:</h3>
+			<div class="row"></div>
+			
+			<ul class="collapsible" data-collapsible="accordion">
+			  {% for event in object_list %}
+			  <li>
+			    <div class="collapsible-header"><i class="material-icons"><i class="material-icons">developer_board</i></i>{{ event.title }}</div>
+			    <div class="collapsible-body">
+			    	<a href="{% url "events:detail" event.id %}">
+						<i class="material-icons black-text">visibility</i>
+					</a>
+			    	<a href="{% url "events:edit" event.id %}">
+			    		<i class="material-icons green-text">create</i>
+			    	</a>
+                	<a href="{% url "events:delete" event.id %}">
+                		<i class="material-icons red-text">delete_sweep</i>
+                	</a>
+			    </div>
+			  </li>
+
+			{% endfor %}
+
+			</ul>
+		</div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+		<div class="row"></div>
+
+	</div>
+{% endblock %}

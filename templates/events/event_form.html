@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block page_title %}
+	{{ title }}
+{% endblock %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+                {% load materialize %}
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form.date_start|as_material:"s12 m6" }}
+                    {{ form.date_end|as_material:"s12 m6" }}
+                    {{ form.title|as_material:"s12 m6" }}
+                    {{ form.description|as_material:"s12 m6" }}
+                    {{ form.organizer|as_material:"s12 m6" }}
+                    {{ form.email|as_material:"s12 m6" }}
+                    {{ form.location|as_material:"s12 m6" }}
+                    {{ form.timezone|as_material:"s12 m6" }}
+
+			</div>
+		</div>
+		<div class="row center">
+			<button class="btn waves-effect waves-light" type="submit" value="Save">Submit
+		    	<i class="material-icons right">send</i>
+		  	</button>
+		  	</form>
+		</div>
+	</div>
+
+{% endblock %}
