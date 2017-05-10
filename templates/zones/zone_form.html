@@ -9,14 +9,11 @@
                 {% load materialize %}
 				<form method="POST" enctype="multipart/form-data">
 					{% csrf_token %}
-					{{ form.date_start|as_material:"s12 m6" }}
-                    {{ form.date_end|as_material:"s12 m6" }}
-                    {{ form.title|as_material:"s12 m6" }}
-                    {{ form.description|as_material:"s12 m6" }}
-                    {{ form.organizer|as_material:"s12 m6" }}
-                    {{ form.email|as_material:"s12 m6" }}
+					{{ form.date|as_material:"s12 m6" }}
                     {{ form.location|as_material:"s12 m6" }}
-                    {{ form.timezone|as_material:"s12 m6" }}
+                    {{ form.moisture|as_material:"s12 m6" }}
+                    {{ form.rainfall|as_material:"s12 m6" }}
+                    {{ form.trees|as_material:"s12 m6" }}
 
 			</div>
 		</div>

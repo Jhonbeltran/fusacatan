@@ -10,27 +10,12 @@
                     <div class="row"></div>
                     <div class="row grey">
                         <div class="row"></div>
-                        <h4>{{ event.title }}</h4>
+                        <h4>{{ zone.location }}</h4>
                         <p class="flow-text">
-                            {{ event.description }}
+                            {{ zone.date }}
                         </p>
                     </div>
                     
-                </div>
-                <div class="row">
-                   <!-- 3. Place event data -->
-                    <span class="addtocalendar btn lime ">
-                        <var class="atc_event">
-                            <var class="atc_date_start">{{ event.date_start }}</var>
-                            <var class="atc_date_end">{{ event.date_end }}</var>
-                            <var class="atc_timezone">{{ event.timezone }}</var>
-                            <var class="atc_title">{{ event.title }}</var>
-                            <var class="atc_description">{{ event.description }}</var>
-                            <var class="atc_location">{{ event.location }}</var>
-                            <var class="atc_organizer">{{ event.organizer }}</var>
-                            <var class="atc_organizer_email">{{ event.email }}</var>
-                        </var>
-                    </span>  
                 </div>
                         
             </div>
@@ -38,41 +23,19 @@
 			<div class="col s12 m6">
 				<p class="flow-text">
                     <i class="material-icons">content_paste</i>
-					{{ event.date_start }}
+					{{ zone.moisture }}
 				</p>
                 <p class="flow-text">
                     <i class="material-icons">content_paste</i>
-                    {{ event.date_end }}
+                    {{ zone.rainfall }}
                 </p>
                 <p class="flow-text">
                     <i class="material-icons">access_time</i>
-                    {{ event.timezone }}
-                </p>
-                <p class="flow-text">
-                    <i class="material-icons">location_on</i>
-                    {{ event.location }}
-                </p>
-                <p class="flow-text">
-                    <i class="material-icons">face</i>
-                    {{ event.organizer }}
-                </p>
-                <p class="flow-text">
-                    <i class="material-icons">contact_mail</i>
-                    {{ event.email }}
+                    {{ zone.trees }}
                 </p>
 			</div>
 		</div>
 
 	</div>
-
-	<script type="text/javascript">(function () {
-            if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
-            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
-                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
-                s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-                var h = d[g]('body')[0];h.appendChild(s); }})();
-    </script>
-
     
 {% endblock %}
