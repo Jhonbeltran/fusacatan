@@ -6,27 +6,27 @@ from django.views.generic.edit import DeleteView
 from .mixins import LoginRequiredMixin
 from django.core.urlresolvers import reverse_lazy
 from .models import Zone
-from .forms import EventForm
+from .forms import ZoneForm
 
-class EventCreate(LoginRequiredMixin, CreateView):
+class ZoneCreate(LoginRequiredMixin, CreateView):
     model = Zone
     success_url = reverse_lazy('zones:zone')
     fields = ['date', 'location', 'moisture',
     	      'rainfall', 'trees']
 
-class EventList(ListView):
+class ZoneList(ListView):
     model = Zone
 
-class EventDetail(LoginRequiredMixin, DetailView):
+class ZoneDetail(LoginRequiredMixin, DetailView):
     model = Zone
 
-class EventUpdate(LoginRequiredMixin, UpdateView):
+class ZoneUpdate(LoginRequiredMixin, UpdateView):
     model = Zone
     success_url = reverse_lazy('zones:zone')
     fields = ['date', 'location', 'moisture',
     	      'rainfall', 'trees']
 
 
-class EventDelete(LoginRequiredMixin, DeleteView):
+class ZoneDelete(LoginRequiredMixin, DeleteView):
     model = Zone
     success_url = reverse_lazy('zones:zone')
