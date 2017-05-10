@@ -20,6 +20,6 @@ from django.conf import settings
 from material.frontend import urls as frontend_urls
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls, , name='admin'),
-    url(r'^', include('zones.urls', namespace='zones')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^admin/', admin.site.urls, name='admin'),
+    # url(r'^', include('zones.urls', namespace='zones')),
+] # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

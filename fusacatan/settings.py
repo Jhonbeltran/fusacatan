@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'zones'
+    'zones',
     'flat_responsive',
     'materialize_forms',
     'django.contrib.admin',
